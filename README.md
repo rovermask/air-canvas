@@ -98,5 +98,7 @@ Feel free to open issues or submit pull requests. Let's make AirCanvas even cool
 ---
 
 🙋‍♂️ Author
+
 📌 Name: Vibhum Sharma
+
 📧 Contact: vibhum10sharma@gmail.com
