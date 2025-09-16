@@ -1,8 +1,7 @@
 # AirCanvas 🎨🖐️
-# 💨 LungVision - *A CNN-Based Tuberculosis Detection Tool*
 
 [![Deployed](https://img.shields.io/badge/Live-Demo-green)](https://github.com/rovermask/air-canvas)  
-🔗 **Live App:** [https://tb-detection-flask.onrender.com](https://github.com/rovermask/air-canvas) 
+🔗 **Live App:** [https://github.com/rovermask/air-canvas](https://github.com/rovermask/air-canvas) 
 
 ---
 
