@@ -23,7 +23,7 @@
 
 ## Demo
 
-🎥 *Add GIF or short video showing AirCanvas in action*
+<img width="1526" height="611" alt="air canvas ss" src="https://github.com/user-attachments/assets/3c9f134f-48e4-4652-8063-d48d90b591cd" />
 
 ---
 
