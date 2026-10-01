@@ -24,7 +24,20 @@
 
 ---
 
-## Installation 🛠️
+## Web Version 🌐
+
+There is also a browser version in [`air-canvas-web/`](air-canvas-web/). It has the same gestures, toolbar and shortcuts, with hand tracking running entirely in your browser (no install, no video uploaded).
+
+```bash
+cd air-canvas-web
+python -m http.server 8000
+```
+
+Open <http://localhost:8000> and click **Start camera**. See [`air-canvas-web/README.md`](air-canvas-web/README.md) for details.
+
+---
+
+## Installation (Desktop) 🛠️
 
 1. Clone the repo:
 
@@ -49,7 +62,7 @@ pip install -r requirements.txt
 
 ---
 
-## Usage 🚀
+## Usage (Desktop) 🚀
 
 Run the app:
 
@@ -123,7 +136,8 @@ air-canvas/
 ├── ui.py              # Toolbar, hand overlay, HUD
 ├── SaveFile.py        # Save dialog
 ├── requirements.txt
-└── README.md
+├── README.md
+└── air-canvas-web/    # Browser version (HTML/CSS/JS, no build step)
 ```
 
 ---
