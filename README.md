@@ -1,7 +1,7 @@
 # AirCanvas 🎨🖐️
 
-[![Deployed](https://img.shields.io/badge/Live-Demo-green)](https://github.com/rovermask/air-canvas)  
-🔗 **Live App:** [https://github.com/rovermask/air-canvas](https://github.com/rovermask/air-canvas) 
+[![Deployed](https://img.shields.io/badge/Live-Demo-green)](https://air-canvas-air-canvas-web.vercel.app/)  
+🔗 **Live App:** [https://air-canvas-air-canvas-web.vercel.app/](https://air-canvas-air-canvas-web.vercel.app/) 
 
 ---
 
