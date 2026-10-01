@@ -20,7 +20,7 @@
 * Undo (up to 20 steps) and adjustable brush size
 * Live overlay of the hand skeleton, current gesture, brush size and FPS
 * Save your drawing as PNG or JPG on a white background
-* Runs on a standard webcam at 640x480
+* Runs on a standard webcam at 1280x720
 
 ---
 
@@ -102,7 +102,7 @@ Tunable constants are at the top of `AirCanvas.py` and `camera.py`:
 
 | Setting | File | Effect |
 |---|---|---|
-| `width`, `height`, `fps` | `camera.py` | Capture resolution (default 640x480, 30 fps) |
+| `width`, `height`, `fps` | `camera.py` | Capture resolution (default 1280x720, 60 fps) |
 | `SMOOTHING` | `AirCanvas.py` | Higher = steadier line, more lag |
 | `DWELL_SECONDS` | `AirCanvas.py` | Hold time to press a toolbar button |
 | `EXTEND_DEG` / `CURL_DEG` | `AirCanvas.py` | How straight or bent a finger must be to count |
@@ -125,7 +125,7 @@ Tunable constants are at the top of `AirCanvas.py` and `camera.py`:
 ```
 air-canvas/
 ├── AirCanvas.py       # Main app: tracking, gestures, drawing
-├── camera.py          # Threaded 640x480 MJPG webcam capture
+├── camera.py          # Threaded 1280x720 MJPG webcam capture
 ├── ui.py              # Toolbar, hand overlay, HUD
 ├── SaveFile.py        # Save dialog
 ├── requirements.txt

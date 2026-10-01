@@ -11,7 +11,7 @@ class Camera:
 
     Grabbing runs on its own thread so slow hand-tracking never causes the
     driver buffer to fill up (which shows up as laggy, out-of-date video).
-    Requests MJPG at 640x480/30fps, which most webcams only deliver in that mode.
+    Requests MJPG at 1280x720/60fps, which most webcams only deliver in that mode.
     """
 
     def __init__(self, index=0, width=1280, height=720, fps=60):

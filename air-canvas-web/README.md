@@ -37,6 +37,10 @@ air-canvas-web/
 
 `app.js` loads the MediaPipe runtime from the jsDelivr CDN (pinned to 0.10.21), so an internet connection is needed on first load. The gesture logic and tunables (`SMOOTHING`, `DWELL_MS`, `EXTEND_DEG`, `CURL_DEG`, `LOST_GRACE_MS`) mirror the desktop app. It uses the GPU delegate when available and falls back to CPU.
 
+## Camera
+
+Requests 1280x720 at 30 fps (the browser picks the closest mode your camera supports). To change it, edit `CAM_W` and `CAM_H` at the top of `app.js`; text, cursors and the toolbar scale automatically.
+
 ## Browser support
 
 Current Chrome, Edge, Firefox and Safari. Drawing is mirrored like a selfie view.

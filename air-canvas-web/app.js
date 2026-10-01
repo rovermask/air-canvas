@@ -5,8 +5,8 @@ const VISION_URL = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21
 const MODEL_URL = "models/hand_landmarker.task"; // bundled copy of Google's float16 hand_landmarker model
 
 // ---- tunables (same meaning as in the desktop app) -----------------------
-const CAM_W = 640;
-const CAM_H = 480;
+const CAM_W = 1280;
+const CAM_H = 720;
 const DWELL_MS = 600;       // hold a fingertip on a button this long to press it
 const SMOOTHING = 0.5;      // 0 = raw, closer to 1 = smoother but laggier
 const MODE_HOLD_FRAMES = 2; // a gesture must persist this many frames before it counts
@@ -42,6 +42,7 @@ video.muted = true;
 
 let W = CAM_W;
 let H = CAM_H;
+const u = () => W / 640; // UI scale: text and cursors are designed at 640px wide
 let layer, lctx; // drawing layer (transparent canvas)
 let barH = 64;
 let rects = [];
@@ -293,7 +294,7 @@ function roundRect(x, y, w, h, r) {
 function drawToolbar(target, progress) {
   ctx.fillStyle = "rgba(28,30,38,0.78)";
   ctx.fillRect(0, 0, W, barH);
-  ctx.font = "600 14px system-ui, sans-serif";
+  ctx.font = `600 ${14 * u()}px system-ui, sans-serif`;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
 
@@ -329,7 +330,7 @@ function drawHand(pts) {
   ctx.fillStyle = "rgba(60,60,60,0.9)";
   for (const p of pts) {
     ctx.beginPath();
-    ctx.arc(p[0], p[1], 3, 0, Math.PI * 2);
+    ctx.arc(p[0], p[1], 3 * u(), 0, Math.PI * 2);
     ctx.fill();
   }
 }
@@ -351,7 +352,7 @@ function drawCursor(tip) {
     ctx.lineWidth = 2;
     ctx.strokeStyle = "#50c8ff";
     ctx.beginPath();
-    ctx.arc(tip[0], tip[1], 14, 0, Math.PI * 2);
+    ctx.arc(tip[0], tip[1], 14 * u(), 0, Math.PI * 2);
     ctx.stroke();
   }
 }
@@ -359,24 +360,24 @@ function drawCursor(tip) {
 function drawHud(tracking, now) {
   ctx.textBaseline = "middle";
   ctx.fillStyle = "rgba(28,30,38,0.85)";
-  ctx.fillRect(0, H - 30, W, 30);
+  ctx.fillRect(0, H - 30 * u(), W, 30 * u());
   const status = tracking
     ? { DRAW: "Drawing", SELECT: "Pen up / select", IDLE: "Idle" }[mode]
     : "No hand detected";
   ctx.fillStyle = "#f0f0f0";
-  ctx.font = "13px system-ui, sans-serif";
+  ctx.font = `${13 * u()}px system-ui, sans-serif`;
   ctx.textAlign = "left";
-  ctx.fillText(`${status}   |   Brush ${size}px   |   ${fps.toFixed(0)} FPS`, 10, H - 15);
+  ctx.fillText(`${status}   |   Brush ${size}px   |   ${fps.toFixed(0)} FPS`, 10 * u(), H - 15 * u());
   ctx.textAlign = "right";
   ctx.fillStyle = "#b4b4b4";
-  ctx.font = "11px system-ui, sans-serif";
-  ctx.fillText("u undo | +/- size | c clear | s save", W - 10, H - 15);
+  ctx.font = `${11 * u()}px system-ui, sans-serif`;
+  ctx.fillText("u undo | +/- size | c clear | s save", W - 10 * u(), H - 15 * u());
 
   if (now < toastUntil) {
     ctx.textAlign = "center";
     ctx.fillStyle = "#50c8ff";
-    ctx.font = "600 18px system-ui, sans-serif";
-    ctx.fillText(toast, W / 2, H - 52);
+    ctx.font = `600 ${18 * u()}px system-ui, sans-serif`;
+    ctx.fillText(toast, W / 2, H - 52 * u());
   }
 }
 
