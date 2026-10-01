@@ -60,9 +60,11 @@ pip install -r requirements.txt
 python AirCanvas.py
 ```
 
-2. Move your hand in front of the camera to start drawing
-3. Use gestures for **erase** and **clear** (details in the code)
-4. Press `q` to quit and save your drawing
+2. Gestures:
+   * **Index finger up** - draw
+   * **Index + middle finger up** - pen lifted; hold the fingertip on a toolbar button for ~0.6s to press it
+   * Any other pose (fist, open palm) - idle
+3. Keys: `u` undo, `+`/`-` brush size, `c` clear, `s` save, `q` quit
 
 ---
 
@@ -81,11 +83,12 @@ python AirCanvas.py
 
 ```
 AirCanvas/
-├── AirCanvas.py       # Main app
-├── Distance.py        # Utility for point distance calculation
-├── PrepareCanvas.py   # Canvas preparation
-├── SaveFile.py        # Saving drawings
-├── requirements.txt   # Dependencies
+├── AirCanvas.py       # Main app: tracking, gestures, drawing
+├── camera.py          # Threaded 640x480 MJPG webcam capture
+├── ui.py              # Toolbar, hand overlay, HUD
+├── Distance.py        # Point distance helper
+├── SaveFile.py        # Save dialog
+├── requirements.txt
 └── README.md
 ```
 

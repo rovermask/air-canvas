@@ -1,8 +1,26 @@
+# SaveFile.py
+import os
+import time
+from tkinter import Tk
+from tkinter.filedialog import asksaveasfilename
 
-from tkinter.filedialog import asksaveasfile
 
-def save(): 
-    files = [('JPEG File', '*.jpg'), 
-             ('PNG File', '*.png')] 
-    file = asksaveasfile(filetypes = files, defaultextension = files) 
-    return file
+def save():
+    """Ask where to save the drawing. Returns a path, or None if cancelled."""
+    root = Tk()
+    root.withdraw()
+    root.attributes("-topmost", True)
+    try:
+        path = asksaveasfilename(
+            parent=root,
+            initialfile=time.strftime("aircanvas_%Y%m%d_%H%M%S.png"),
+            defaultextension=".png",
+            filetypes=[("PNG File", "*.png"), ("JPEG File", "*.jpg")],
+        )
+    finally:
+        root.destroy()
+    return path or None
+
+
+def default_path():
+    return os.path.join(os.getcwd(), time.strftime("aircanvas_%Y%m%d_%H%M%S.png"))
