@@ -35,6 +35,8 @@ python -m http.server 8000
 
 Open <http://localhost:8000> and click **Start camera**. See [`air-canvas-web/README.md`](air-canvas-web/README.md) for details.
 
+<img src="docs/web-interface.png" alt="AirCanvas web interface" width="720" />
+
 ---
 
 ## Installation (Desktop) 🛠️
