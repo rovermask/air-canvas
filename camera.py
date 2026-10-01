@@ -14,7 +14,7 @@ class Camera:
     Requests MJPG at 640x480/30fps, which most webcams only deliver in that mode.
     """
 
-    def __init__(self, index=0, width=1280, height=720, fps=50):
+    def __init__(self, index=0, width=1280, height=720, fps=60):
         backend = cv2.CAP_DSHOW if sys.platform == "win32" else cv2.CAP_ANY
         self.cap = cv2.VideoCapture(index, backend)
         if not self.cap.isOpened():
